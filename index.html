@@ -27,6 +27,42 @@
         .rating-emoji:hover {
             transform: scale(1.2);
         }
+        /* New CSS for the image modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 1rem;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-gray-800 antialiased">
@@ -67,7 +103,7 @@
                     </ul>
                 </div>
                 <div>
-                    <div class="text-9xl text-gray-500 text-center">🗺️</div>
+                    <img src="https://www.advantour.com/img/japan/sapporo/best-time-to-visit/sapporo-best-time-to-visit.jpg" alt="ภาพแผนที่ของซัปโปโร" class="rounded-xl shadow-md">
                 </div>
             </div>
         </section>
@@ -110,10 +146,10 @@
             <!-- Budget Section -->
             <div id="budget" class="bg-white p-8 rounded-2xl shadow-lg">
                 <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2">
-                    งบประมาณโดยประมาณ (บาท)
+                    งบประมาณ (บาท)
                 </h2>
                 <p class="text-gray-600 mb-4">
-                    ข้อมูลค่าใช้จ่ายสำหรับตั๋วเครื่องบินและที่พัก เพื่อช่วยในการตัดสินใจ
+                    ข้อมูลค่าใช้จ่ายสำหรับตั๋วเครื่องบิน ที่พัก และอาหาร เพื่อช่วยในการตัดสินใจ
                 </p>
                 <div class="space-y-6">
                     <div>
@@ -121,7 +157,8 @@
                         <ul class="list-disc list-inside space-y-2 text-gray-600">
                             <li><strong>ตั๋วเครื่องบิน:</strong> ~17,000 บาท</li>
                             <li><strong>ที่พัก (4 คืน):</strong> ~8,000 บาท (2,000 บาท/คืน)</li>
-                            <li class="text-blue-600 font-bold"><strong>รวม (โดยประมาณ):</strong> ~25,000 บาท</li>
+                            <li><strong>อาหาร (5 วัน):</strong> ~1,500 - 6,000 บาท (300-1,200 บาท/วัน)</li>
+                            <li class="text-blue-600 font-bold"><strong>รวม (โดยประมาณ):</strong> ~26,500 - 31,000 บาท</li>
                         </ul>
                     </div>
                     <div>
@@ -129,7 +166,8 @@
                         <ul class="list-disc list-inside space-y-2 text-gray-600">
                             <li><strong>ตั๋วเครื่องบิน:</strong> ~51,000 บาท (17,000 บาท x 3)</li>
                             <li><strong>ที่พัก (4 คืน):</strong> ~24,000 บาท (2,000 บาท/คืน x 3 ห้อง)</li>
-                            <li class="text-blue-600 font-bold"><strong>รวม (โดยประมาณ):</strong> ~75,000 บาท</li>
+                            <li><strong>อาหาร (5 วัน):</strong> ~4,500 - 18,000 บาท (300-1,200 บาท/วัน x 3 คน)</li>
+                            <li class="text-blue-600 font-bold"><strong>รวม (โดยประมาณ):</strong> ~79,500 - 93,000 บาท</li>
                         </ul>
                     </div>
                 </div>
@@ -137,7 +175,7 @@
 
             <!-- Weather Forecast Section -->
             <div id="weather" class="bg-blue-100 p-8 rounded-2xl shadow-lg">
-                <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">
+                <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2 text-center">
                     พยากรณ์อากาศที่เงียบสงบ
                 </h2>
                 <p class="text-gray-600 mb-4 leading-relaxed">
@@ -212,7 +250,7 @@
         
         <!-- Rating Scale Section -->
         <section id="rating" class="bg-blue-100 p-8 rounded-2xl shadow-lg mb-12 text-center">
-            <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2 text-center">
                 คุณอยากไปซัปโปโรแค่ไหน?
             </h2>
             <p class="text-gray-600 mb-6 leading-relaxed">
@@ -241,7 +279,34 @@
             </p>
         </section>
 
+        <!-- New Section for Collage -->
+        <section id="collage" class="bg-blue-100 p-8 rounded-2xl shadow-lg mb-12">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2 text-center">
+                ภาพความทรงจำที่รอคุณมาสร้าง
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-w-1 aspect-h-1">
+                    <img id="collage-img-1" src="https://images-blog.redplanethotels.com/2020/01/31094653/sapporo-odori-park-winter.jpg" alt="ภาพภูเขาหิมะ" class="object-cover rounded-xl shadow-md w-full h-full cursor-pointer">
+                </div>
+                <div class="aspect-w-1 aspect-h-1">
+                    <img id="collage-img-2" src="https://visit.sapporo.travel/wp2022/wp-content/uploads/2022/09/spot_soupcurry-4-800x532.jpg" alt="ภาพราเม็งร้อนๆ" class="object-cover rounded-xl shadow-md w-full h-full cursor-pointer">
+                </div>
+                <div class="aspect-w-1 aspect-h-1">
+                    <img id="collage-img-3" src="https://travel.rakuten.com/contents/sites/contents/files/styles/max_1300x1300/public/2024-05/jozankei-onsen-guide_1.jpg" alt="ภาพออนเซ็นท่ามกลางหิมะ" class="object-cover rounded-xl shadow-md w-full h-full cursor-pointer">
+                </div>
+                <div class="aspect-w-1 aspect-h-1">
+                    <img id="collage-img-4" src="https://travel.rakuten.com/contents/sites/contents/files/styles/max_1300x1300/public/2023-12/otaru-snow-light-path-festival-guide_9.jpg" alt="ภาพคลองโอตารุยามค่ำคืน" class="object-cover rounded-xl shadow-md w-full h-full cursor-pointer">
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 rounded-t-3xl shadow-xl">
@@ -252,6 +317,14 @@
             <p>
                 สร้างขึ้นด้วยความรัก
             </p>
+            <p class="mt-4 text-xs">
+                <strong>เครดิตรูปภาพ:</strong>
+                <br>ภาพภูเขาหิมะ: <a href="https://images-blog.redplanethotels.com/2020/01/31094653/sapporo-odori-park-winter.jpg" class="underline hover:text-white" target="_blank">Red Planet Hotels Blog</a>
+                <br>ภาพแกงกะหรี่: <a href="https://visit.sapporo.travel/wp2022/wp-content/uploads/2022/09/spot_soupcurry-4-800x532.jpg" class="underline hover:text-white" target="_blank">Visit Sapporo</a>
+                <br>ภาพออนเซ็นท่ามกลางหิมะ: <a href="https://travel.rakuten.com/contents/sites/contents/files/styles/max_1300x1300/public/2024-05/jozankei-onsen-guide_1.jpg" class="underline hover:text-white" target="_blank">Rakuten Travel</a>
+                <br>ภาพคลองโอตารุยามค่ำคืน: <a href="https://travel.rakuten.com/contents/sites/contents/files/styles/max_1300x1300/public/2023-12/otaru-snow-light-path-festival-guide_9.jpg" class="underline hover:text-white" target="_blank">Rakuten Travel</a>
+                <br>ภาพที่ว่าการเมืองซัปโปโร: <a href="https://www.advantour.com/img/japan/sapporo/best-time-to-visit/sapporo-best-time-to-visit.jpg" class="underline hover:text-white" target="_blank">AdvanTour</a>
+            </p>
         </div>
     </footer>
 
@@ -261,6 +334,11 @@
             // Get form and result elements
             const quizForm = document.getElementById('sapporo-quiz');
             const quizResult = document.getElementById('quiz-result');
+            
+            // Get modal elements
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModal = document.getElementById('closeModal');
 
             // Add event listener for form submission
             if (quizForm) {
@@ -333,6 +411,26 @@
                     ratingMessage.textContent = message;
                     ratingMessage.classList.remove('hidden');
                 });
+            });
+
+            // Collage image modal functionality
+            const collageImages = document.querySelectorAll('#collage img');
+            
+            collageImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    imageModal.style.display = 'flex';
+                    modalImage.src = img.src;
+                });
+            });
+
+            closeModal.addEventListener('click', () => {
+                imageModal.style.display = 'none';
+            });
+
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal) {
+                    imageModal.style.display = 'none';
+                }
             });
         });
     </script>
