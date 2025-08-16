@@ -15,10 +15,17 @@
             font-family: 'Inter', sans-serif;
         }
         .bg-hero {
-            background-image: url('http://googleusercontent.com/image_collection/image_retrieval/5483842155372034048_0');
+            background-image: url('https://images.unsplash.com/photo-1542316527-3770172e276f');
             background-size: cover;
             background-position: center;
             background-blend-mode: multiply;
+        }
+        .rating-emoji {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .rating-emoji:hover {
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -60,7 +67,7 @@
                     </ul>
                 </div>
                 <div>
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/5483842155372034048_3" alt="A beautiful snowy street in Sapporo" class="rounded-xl shadow-md">
+                    <div class="text-9xl text-gray-500 text-center">🗺️</div>
                 </div>
             </div>
         </section>
@@ -73,7 +80,7 @@
             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card 1: Beautiful Scenery -->
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/5483842155372034048_1" alt="A beautiful snowy landscape" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <div class="text-6xl mb-4">🏔️</div>
                     <h3 class="text-xl font-semibold mb-2 text-gray-700">โลกแห่งความสงบ</h3>
                     <p class="text-gray-600">
                         เมืองและภูเขาจะถูกปกคลุมด้วยหิมะนุ่มนวล สร้างทัศนียภาพที่เงียบสงบและงดงาม เหมาะสำหรับการพักผ่อนอย่างแท้จริง
@@ -81,7 +88,7 @@
                 </div>
                 <!-- Card 2: Relaxing Activities -->
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <img src="https://placehold.co/600x400/96b8e3/0f172a?text=Relaxing+Onsen" alt="A person relaxing in a hot spring" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <div class="text-6xl mb-4">🧖‍♀️</div>
                     <h3 class="text-xl font-semibold mb-2 text-gray-700">ปลดปล่อยความเหนื่อยล้า</h3>
                     <p class="text-gray-600">
                         คุณสามารถผ่อนคลายในออนเซ็นที่แสนสบาย หรือเดินเล่นในหมู่บ้านประวัติศาสตร์อันเงียบสงบ ที่จะทำให้คุณรู้สึกผ่อนคลายอย่างแท้จริง
@@ -89,7 +96,7 @@
                 </div>
                 <!-- Card 3: Delicious Food -->
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/5483842155372034048_2" alt="A bowl of hot ramen" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <div class="text-6xl mb-4">🍜</div>
                     <h3 class="text-xl font-semibold mb-2 text-gray-700">อิ่มอร่อยกับความสุข</h3>
                     <p class="text-gray-600">
                         ฮอกไกโดขึ้นชื่อเรื่องอาหารสดใหม่! ลิ้มรสราเม็งมิโซะร้อนๆ อาหารทะเลสดๆ จากตลาด และขนมหวานที่นุ่มละมุนลิ้น
@@ -103,7 +110,7 @@
             <!-- Budget Section -->
             <div id="budget" class="bg-white p-8 rounded-2xl shadow-lg">
                 <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2">
-                    งบประมาณโดยประมาณ (บาท)
+                    งบประมาณโดยประมาณ
                 </h2>
                 <p class="text-gray-600 mb-4">
                     ข้อมูลค่าใช้จ่ายสำหรับตั๋วเครื่องบินและที่พัก เพื่อช่วยในการตัดสินใจ
@@ -202,80 +209,24 @@
                 </div>
             </div>
         </section>
-
-        <!-- Interactive Quiz Section -->
-        <section id="quiz" class="bg-white p-8 rounded-2xl shadow-lg mb-12">
-            <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2 text-center">
-                ค้นหาช่วงเวลาที่ใช่ในซัปโปโร
+        
+        <!-- Rating Scale Section -->
+        <section id="rating" class="bg-blue-100 p-8 rounded-2xl shadow-lg mb-12 text-center">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">
+                คุณอยากไปซัปโปโรแค่ไหน?
             </h2>
-            <p class="text-center text-gray-600 mb-6 leading-relaxed">
-                มาตอบคำถามง่ายๆ เพื่อดูว่าคุณจะหลงรักช่วงเวลาไหนในซัปโปโรมากที่สุด
+            <p class="text-gray-600 mb-6 leading-relaxed">
+                ให้คะแนนความอยากไปเที่ยวซัปโปโรของคุณ โดยเลือกอีโมจิที่ตรงกับความรู้สึกมากที่สุด
             </p>
-            <form id="sapporo-quiz" class="space-y-8">
-                <!-- Question 1 -->
-                <div class="quiz-question bg-gray-50 p-6 rounded-xl shadow-inner">
-                    <p class="text-lg font-semibold text-gray-700 mb-4">1. คุณชอบผ่อนคลายด้วยวิธีไหนมากที่สุด?</p>
-                    <div class="flex flex-col space-y-2">
-                        <label class="inline-flex items-center text-gray-600">
-                            <input type="radio" name="q1" value="A" class="form-radio text-blue-600">
-                            <span class="ml-2">แช่ตัวในบ่อน้ำพุร้อน.</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-600">
-                            <input type="radio" name="q1" value="B" class="form-radio text-blue-600">
-                            <span class="ml-2">เดินสำรวจสวนสาธารณะที่เงียบสงบ.</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-600">
-                            <input type="radio" name="q1" value="C" class="form-radio text-blue-600">
-                            <span class="ml-2">ลิ้มลองอาหารท้องถิ่นที่อร่อย.</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Question 2 -->
-                <div class="quiz-question bg-gray-50 p-6 rounded-xl shadow-inner">
-                    <p class="text-lg font-semibold text-gray-700 mb-4">2. คุณอยากได้ของที่ระลึกแบบไหนกลับบ้าน?</p>
-                    <div class="flex flex-col space-y-2">
-                        <label class="inline-flex items-center text-gray-600">
-                            <input type="radio" name="q2" value="A" class="form-radio text-blue-600">
-                            <span class="ml-2">งานศิลปะท้องถิ่นที่สวยงาม.</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-600">
-                            <input type="radio" name="q2" value="B" class="form-radio text-blue-600">
-                            <span class="ml-2">ของหวานอร่อยๆ ไว้แบ่งกันทาน.</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-600">
-                            <input type="radio" name="q2" value="C" class="form-radio text-blue-600">
-                            <span class="ml-2">ของที่ระลึกจากสถานที่ประวัติศาสตร์.</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Question 3 -->
-                <div class="quiz-question bg-gray-50 p-6 rounded-xl shadow-inner">
-                    <p class="text-lg font-semibold text-gray-700 mb-4">3. อะไรที่ฟังดูน่าตื่นเต้นที่สุดสำหรับคุณ?</p>
-                    <div class="flex flex-col space-y-2">
-                        <label class="inline-flex items-center text-gray-600">
-                            <input type="radio" name="q3" value="A" class="form-radio text-blue-600">
-                            <span class="ml-2">ชมวิวสวยๆ จากยอดเขา.</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-600">
-                            <input type="radio" name="q3" value="B" class="form-radio text-blue-600">
-                            <span class="ml-2">เดินเล่นในตลาดที่คึกคัก.</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-600">
-                            <input type="radio" name="q3" value="C" class="form-radio text-blue-600">
-                            <span class="ml-2">เยี่ยมชมสวนที่เงียบสงบ.</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
-                        มาดูกันว่าคุณจะหลงรักอะไร!
-                    </button>
-                </div>
-            </form>
-            <div id="quiz-result" class="mt-8 text-center text-xl font-semibold text-gray-800 hidden">
-                <!-- Quiz result will be displayed here -->
+            <div class="flex justify-center space-x-6 text-5xl">
+                <span id="rating-1" class="rating-emoji" data-rating="1">😞</span>
+                <span id="rating-2" class="rating-emoji" data-rating="2">😐</span>
+                <span id="rating-3" class="rating-emoji" data-rating="3">😊</span>
+                <span id="rating-4" class="rating-emoji" data-rating="4">🤩</span>
+                <span id="rating-5" class="rating-emoji" data-rating="5">✈️</span>
+            </div>
+            <div id="rating-message" class="mt-8 text-xl font-semibold text-gray-800 hidden">
+                <!-- Rating message will be displayed here -->
             </div>
         </section>
 
@@ -283,60 +234,93 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 rounded-t-3xl shadow-xl">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-lg mb-4">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-400">
+            <p>
                 หวังว่าข้อมูลนี้จะช่วยให้คุณได้สัมผัสถึงความงดงามของซัปโปโรนะคะ
             </p>
-            <p class="text-sm text-gray-400">
+            <p>
                 สร้างขึ้นด้วยความรัก
             </p>
         </div>
     </footer>
 
     <script>
-        // Get form and result elements
-        const quizForm = document.getElementById('sapporo-quiz');
-        const quizResult = document.getElementById('quiz-result');
+        // Use DOMContentLoaded to ensure the script runs after the document is fully loaded
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Get form and result elements
+            const quizForm = document.getElementById('sapporo-quiz');
+            const quizResult = document.getElementById('quiz-result');
 
-        // Add event listener for form submission
-        quizForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            // Add event listener for form submission
+            quizForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
 
-            // Get all radio button inputs
-            const q1Answer = document.querySelector('input[name="q1"]:checked');
-            const q2Answer = document.querySelector('input[name="q2"]:checked');
-            const q3Answer = document.querySelector('input[name="q3"]:checked');
+                // Get all radio button inputs
+                const q1Answer = document.querySelector('input[name="q1"]:checked');
+                const q2Answer = document.querySelector('input[name="q2"]:checked');
+                const q3Answer = document.querySelector('input[name="q3"]:checked');
 
-            // Check if all questions are answered
-            if (!q1Answer || !q2Answer || !q3Answer) {
-                quizResult.classList.remove('hidden');
-                quizResult.textContent = 'กรุณาตอบคำถามทั้งหมดก่อนนะคะ!';
-                quizResult.classList.add('text-red-600');
-                return;
-            }
+                // Check if all questions are answered
+                if (!q1Answer || !q2Answer || !q3Answer) {
+                    quizResult.classList.remove('hidden');
+                    quizResult.textContent = 'กรุณาตอบคำถามทั้งหมดก่อนนะคะ!';
+                    quizResult.classList.add('text-red-600');
+                    return;
+                }
 
-            // Count the score for each letter
-            let score = { A: 0, B: 0, C: 0 };
-            score[q1Answer.value]++;
-            score[q2Answer.value]++;
-            score[q3Answer.value]++;
+                // Count the score for each letter
+                let score = { A: 0, B: 0, C: 0 };
+                score[q1Answer.value]++;
+                score[q2Answer.value]++;
+                score[q3Answer.value]++;
 
-            // Determine the result based on the highest score
-            let resultMessage = '';
-            if (score.A > score.B && score.A > score.C) {
-                resultMessage = "จากคำตอบของคุณ ดูเหมือนว่าคุณกำลังมองหาทริปที่ผ่อนคลายและมีทิวทัศน์สวยงาม! คุณจะหลงรักการแช่ออนเซ็นแบบดั้งเดิมและการชมวิวทิวทัศน์ที่สวยงามจากภูเขาโมอิวะอย่างแน่นอนค่ะ";
-            } else if (score.B > score.A && score.B > score.C) {
-                resultMessage = "ทริปในฝันของคุณเต็มไปด้วยธรรมชาติที่สวยงามและเรื่องราวที่น่าสนใจ! เราคิดว่าคุณจะเพลิดเพลินกับการเดินเล่นสบายๆ ในสวนสาธารณะ และเยี่ยมชมหมู่บ้านประวัติศาสตร์ฮอกไกโดที่สวยงามค่ะ";
-            } else if (score.C > score.A && score.C > score.B) {
-                resultMessage = "คุณเป็นนักชิมตัวยง! เรามั่นใจว่าคุณจะต้องหลงรักการได้ลองชิมอาหารอร่อยๆ ของซัปโปโร โดยเฉพาะราเม็งชื่อดังและอาหารทะเลสดๆ จากตลาดค่ะ";
-            } else {
-                resultMessage = "ดูเหมือนว่าคุณจะชอบทุกอย่างเลย! ซัปโปโรมีทุกสิ่งให้คุณได้เพลิดเพลินค่ะ เรามาเริ่มวางแผนกันเถอะ!";
-            }
+                // Determine the result based on the highest score
+                let resultMessage = '';
+                if (score.A > score.B && score.A > score.C) {
+                    resultMessage = "จากคำตอบของคุณ ดูเหมือนว่าคุณกำลังมองหาทริปที่ผ่อนคลายและมีทิวทัศน์สวยงาม! คุณจะหลงรักการแช่ออนเซ็นแบบดั้งเดิมและการชมวิวทิวทัศน์ที่สวยงามจากภูเขาโมอิวะอย่างแน่นอนค่ะ";
+                } else if (score.B > score.A && score.B > score.C) {
+                    resultMessage = "ทริปในฝันของคุณเต็มไปด้วยธรรมชาติที่สวยงามและเรื่องราวที่น่าสนใจ! เราคิดว่าคุณจะเพลิดเพลินกับการเดินเล่นสบายๆ ในสวนสาธารณะ และเยี่ยมชมหมู่บ้านประวัติศาสตร์ฮอกไกโดที่สวยงามค่ะ";
+                } else if (score.C > score.A && score.C > score.B) {
+                    resultMessage = "คุณเป็นนักชิมตัวยง! เรามั่นใจว่าคุณจะต้องหลงรักการได้ลองชิมอาหารอร่อยๆ ของซัปโปโร โดยเฉพาะราเม็งชื่อดังและอาหารทะเลสดๆ จากตลาดค่ะ";
+                } else {
+                    resultMessage = "ดูเหมือนว่าคุณจะชอบทุกอย่างเลย! ซัปโปโรมีทุกสิ่งให้คุณได้เพลิดเพลินค่ะ เรามาเริ่มวางแผนกันเถอะ!";
+                }
 
-            // Display the result
-            quizResult.textContent = resultMessage;
-            quizResult.classList.remove('hidden', 'text-red-600');
-            quizResult.classList.add('text-gray-800');
+                // Display the result
+                quizResult.textContent = resultMessage;
+                quizResult.classList.remove('hidden', 'text-red-600');
+                quizResult.classList.add('text-gray-800');
+            });
+            
+            // Rating scale functionality
+            const ratingEmojis = document.querySelectorAll('.rating-emoji');
+            const ratingMessage = document.getElementById('rating-message');
+
+            ratingEmojis.forEach(emoji => {
+                emoji.addEventListener('click', () => {
+                    const rating = emoji.dataset.rating;
+                    let message = '';
+                    switch(rating) {
+                        case '1':
+                            message = 'ไม่ค่อยอยากไปเท่าไหร่ 😞';
+                            break;
+                        case '2':
+                            message = 'ยังคิดอยู่ค่ะ 🤔';
+                            break;
+                        case '3':
+                            message = 'น่าสนใจมาก! 😊';
+                            break;
+                        case '4':
+                            message = 'อยากไปมากๆ เลย! 🤩';
+                            break;
+                        case '5':
+                            message = 'เตรียมตัวเก็บกระเป๋าแล้ว! ✈️';
+                            break;
+                    }
+                    ratingMessage.textContent = message;
+                    ratingMessage.classList.remove('hidden');
+                });
+            });
         });
     </script>
 </body>
