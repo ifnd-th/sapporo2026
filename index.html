@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ไปซัปโปโรกันไหมคะ?</title>
+    <!-- Use Tailwind CSS for a modern, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* A light blue-gray background */
+        }
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8">
+
+        <!-- Header Section -->
+        <header class="w-full max-w-4xl text-center mb-12">
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-blue-900 mb-2 leading-tight">
+                ไปซัปโปโรกันไหมคะ?
+            </h1>
+            <p class="text-xl sm:text-2xl text-blue-700 font-semibold mb-6">
+                ทริปในฝันที่ฮอกไกโดช่วงเดือนมีนาคม 2026!
+            </p>
+            <!-- Hero Image and button for image generation -->
+            <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl mb-4">
+                <div id="hero-image-container" class="w-full h-[300px] sm:h-[400px] flex items-center justify-center bg-gray-200">
+                    <img id="hero-image" src="" alt="ภาพวิวภูเขาและหิมะที่สวยงาม" class="w-full h-full object-cover">
+                    <div id="hero-loading" class="loader hidden"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Why Sapporo Section -->
+        <section class="w-full max-w-4xl bg-white rounded-3xl p-6 sm:p-10 shadow-xl mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-6">
+                ทำไมต้องเป็นซัปโปโรในเดือนมีนาคม?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Card 1: Good Weather -->
+                <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                    <h3 class="font-bold text-xl text-blue-800 mb-2">อากาศกำลังดี ไม่หนาวจนเกินไป</h3>
+                    <p class="text-gray-600">อุณหภูมิเริ่มอุ่นขึ้น แต่ก็ยังคงความเย็นสบาย เหมาะกับการเดินเล่นและเที่ยวชมเมือง</p>
+                </div>
+                <!-- Card 2: Still Snow -->
+                <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                    <h3 class="font-bold text-xl text-blue-800 mb-2">ยังคงมีหิมะให้เห็น</h3>
+                    <p class="text-gray-600">เป็นช่วงปลายฤดูหนาว ที่ยังสามารถชมทิวทัศน์ที่ปกคลุมด้วยหิมะได้อย่างเต็มที่</p>
+                </div>
+                <!-- Card 3: Spring Beginning -->
+                <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                    <h3 class="font-bold text-xl text-blue-800 mb-2">ช่วงเริ่มต้นของฤดูใบไม้ผลิ</h3>
+                    <p class="text-gray-600">ทริปเดียวได้เห็นทั้งหิมะที่สวยงามและดอกไม้ที่เริ่มผลิบานไปพร้อมๆ กัน!</p>
+                </div>
+                <!-- Card 4: Less Crowded -->
+                <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                    <h3 class="font-bold text-xl text-blue-800 mb-2">ไม่ต้องแย่งกับใคร</h3>
+                    <p class="text-gray-600">นักท่องเที่ยวไม่แออัด ทำให้เที่ยวได้สบายและเป็นส่วนตัวมากขึ้น</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food Section -->
+        <section class="w-full max-w-4xl bg-white rounded-3xl p-6 sm:p-10 shadow-xl mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-6">
+                อาหารที่พลาดไม่ได้!
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Food 1: Ramen -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-full h-40 rounded-xl overflow-hidden mb-3 bg-gray-200 flex items-center justify-center">
+                        <img id="food-1-image" src="" alt="ภาพราเม็งซัปโปโร" class="w-full h-full object-cover">
+                        <div id="food-1-loading" class="loader hidden"></div>
+                    </div>
+                    <p class="font-semibold text-lg text-gray-700">ราเม็งซัปโปโร</p>
+                </div>
+                <!-- Food 2: Sushi -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-full h-40 rounded-xl overflow-hidden mb-3 bg-gray-200 flex items-center justify-center">
+                        <img id="food-2-image" src="" alt="ภาพซูชิและอาหารทะเล" class="w-full h-full object-cover">
+                        <div id="food-2-loading" class="loader hidden"></div>
+                    </div>
+                    <p class="font-semibold text-lg text-gray-700">ซูชิและอาหารทะเลสดใหม่</p>
+                </div>
+                <!-- Food 3: Ice Cream -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-full h-40 rounded-xl overflow-hidden mb-3 bg-gray-200 flex items-center justify-center">
+                        <img id="food-3-image" src="" alt="ภาพไอศกรีมนมฮอกไกโด" class="w-full h-full object-cover">
+                        <div id="food-3-loading" class="loader hidden"></div>
+                    </div>
+                    <p class="font-semibold text-lg text-gray-700">ไอศกรีมนมฮอกไกโด</p>
+                </div>
+                <!-- Food 4: Crab -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-full h-40 rounded-xl overflow-hidden mb-3 bg-gray-200 flex items-center justify-center">
+                        <img id="food-4-image" src="" alt="ภาพปูยักษ์ฮอกไกโด" class="w-full h-full object-cover">
+                        <div id="food-4-loading" class="loader hidden"></div>
+                    </div>
+                    <p class="font-semibold text-lg text-gray-700">ปูยักษ์ฮอกไกโด</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Places to Visit Section -->
+        <section class="w-full max-w-4xl bg-white rounded-3xl p-6 sm:p-10 shadow-xl mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-6">
+                สถานที่ท่องเที่ยวที่น่าประทับใจ
+            </h2>
+            <div class="grid sm:grid-cols-2 gap-6">
+                <!-- Place 1: Otaru Canal -->
+                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 shadow-md">
+                    <div class="w-full h-60 rounded-xl overflow-hidden mb-4 bg-gray-200 flex items-center justify-center">
+                        <img id="place-1-image" src="" alt="ภาพคลองโอตารุ" class="w-full h-full object-cover">
+                        <div id="place-1-loading" class="loader hidden"></div>
+                    </div>
+                    <h3 class="font-bold text-xl text-blue-800 mb-2">คลองโอตารุ (Otaru Canal)</h3>
+                    <p class="text-gray-600">เดินเล่นริมคลองที่สวยงามและโรแมนติก พร้อมชมอาคารสไตล์ยุโรปเก่าแก่</p>
+                </div>
+                <!-- Place 2: Mt. Moiwa -->
+                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 shadow-md">
+                    <div class="w-full h-60 rounded-xl overflow-hidden mb-4 bg-gray-200 flex items-center justify-center">
+                        <img id="place-2-image" src="" alt="ภาพภูเขาโมอิวะ" class="w-full h-full object-cover">
+                        <div id="place-2-loading" class="loader hidden"></div>
+                    </div>
+                    <h3 class="font-bold text-xl text-blue-800 mb-2">ภูเขาโมอิวะ (Mount Moiwa)</h3>
+                    <p class="text-gray-600">ขึ้นกระเช้าลอยฟ้าชมวิวเมืองซัปโปโรยามค่ำคืนที่ติดอันดับหนึ่งในสามวิวกลางคืนที่สวยที่สุดในญี่ปุ่น</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Call to Action -->
+        <section class="w-full max-w-4xl text-center bg-blue-100 rounded-3xl p-8 shadow-xl">
+            <h2 class="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
+                สร้างแผนการเดินทาง & รูปภาพเลย!
+            </h2>
+            <p class="text-lg sm:text-xl text-blue-800 mb-6">
+                ให้ AI สร้างแผนการเดินทางและภาพประกอบที่น่าประทับใจสำหรับคุณ
+            </p>
+            <div class="flex justify-center mb-6">
+                <button id="generateImagesBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                    สร้างทั้งหมด! ✨
+                </button>
+            </div>
+            
+            <div id="itineraryContent" class="hidden">
+                <div id="loading-itinerary" class="text-center text-gray-500 hidden mb-6">
+                    <span class="animate-pulse">กำลังสร้างแผนการเดินทาง... โปรดรอสักครู่</span>
+                </div>
+                <div id="error-message" class="text-center text-red-500 font-bold hidden mb-6">
+                    เกิดข้อผิดพลาดในการสร้างแผนการเดินทาง โปรดลองอีกครั้ง
+                </div>
+                <div id="itinerary-list" class="space-y-8">
+                    <!-- Itinerary will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Mapping of elements to their corresponding image generation prompts
+        const imagePrompts = [
+            { id: 'hero-image', prompt: 'a beautiful, high-quality, professional photograph of a snowy mountain landscape in Hokkaido, Japan, with warm sunlight, cinematic style, vibrant colors' },
+            { id: 'food-1-image', prompt: 'a delicious bowl of hot Sapporo miso ramen, a close-up shot, steam rising, professional food photography' },
+            { id: 'food-2-image', prompt: 'a beautifully arranged plate of fresh, high-quality sushi and sashimi on a traditional Japanese plate, professional food photography' },
+            { id: 'food-3-image', prompt: 'a creamy, soft-serve milk ice cream cone, a close-up shot, professional food photography' },
+            { id: 'food-4-image', prompt: 'a large, cooked king crab from Hokkaido, served on a plate, professional food photography' },
+            { id: 'place-1-image', prompt: 'the historic Otaru Canal in Hokkaido, Japan, during a beautiful winter evening, with gas lamps lit along the canal, cinematic style' },
+            { id: 'place-2-image', prompt: 'a stunning night view of the city of Sapporo from Mount Moiwa, with the city lights sparkling below, wide angle, high quality' }
+        ];
+
+        // API call function with exponential backoff
+        async function generateImage(prompt, elementId) {
+            const imageElement = document.getElementById(elementId);
+            const container = imageElement.parentElement;
+            const loaderElement = container.querySelector('.loader');
+
+            // Hide the image and show the loader
+            imageElement.classList.add('hidden');
+            loaderElement.classList.remove('hidden');
+            
+            let response;
+            let retries = 0;
+            const maxRetries = 3;
+            const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=';
+
+            while (retries < maxRetries) {
+                try {
+                    const payload = { 
+                        instances: { prompt: prompt }, 
+                        parameters: { "sampleCount": 1 } 
+                    };
+                    
+                    response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (response.status !== 429) {
+                        break;
+                    }
+                } catch (e) {
+                    // Pass
+                }
+                retries++;
+                await new Promise(res => setTimeout(res, Math.pow(2, retries) * 1000));
+            }
+
+            if (!response.ok) {
+                console.error(`API error: ${response.status} ${response.statusText}`);
+                loaderElement.classList.add('hidden');
+                return;
+            }
+            
+            const result = await response.json();
+            const base64Data = result?.predictions?.[0]?.bytesBase64Encoded;
+
+            if (base64Data) {
+                const imageUrl = `data:image/png;base64,${base64Data}`;
+                imageElement.src = imageUrl;
+                imageElement.classList.remove('hidden');
+            } else {
+                console.error("No image data found in the response.");
+            }
+
+            // Hide the loader
+            loaderElement.classList.add('hidden');
+        }
+
+        const generateImagesBtn = document.getElementById('generateImagesBtn');
+        const itineraryContent = document.getElementById('itineraryContent');
+        const loadingItinerary = document.getElementById('loading-itinerary');
+        const errorMessage = document.getElementById('error-message');
+        const itineraryList = document.getElementById('itinerary-list');
+
+        generateImagesBtn.addEventListener('click', async () => {
+            // Generate all images concurrently
+            imagePrompts.forEach(item => {
+                generateImage(item.prompt, item.id);
+            });
+            
+            // Show loading state for the itinerary
+            itineraryContent.classList.remove('hidden');
+            loadingItinerary.classList.remove('hidden');
+            errorMessage.classList.add('hidden');
+            itineraryList.innerHTML = '';
+
+            try {
+                const prompt = "สร้างแผนการเดินทาง 3 วันที่น่าสนใจสำหรับท่องเที่ยวในเมืองซัปโปโรในช่วงเดือนมีนาคม สำหรับผู้สูงอายุ ให้แต่ละวันมีรายละเอียดกิจกรรม 3-4 อย่าง พร้อมชื่อกิจกรรมและคำอธิบายสั้นๆ (ไม่เกิน 2-3 ประโยค) แผนการเดินทางนี้เน้นการเดินทางสบายๆ ไม่เร่งรีบ";
+                
+                // Define the structured JSON response schema
+                const responseSchema = {
+                    type: "OBJECT",
+                    properties: {
+                        "tripTitle": { "type": "STRING" },
+                        "days": {
+                            "type": "ARRAY",
+                            "items": {
+                                "type": "OBJECT",
+                                "properties": {
+                                    "day": { "type": "STRING" },
+                                    "title": { "type": "STRING" },
+                                    "activities": {
+                                        "type": "ARRAY",
+                                        "items": {
+                                            "type": "OBJECT",
+                                            "properties": {
+                                                "name": { "type": "STRING" },
+                                                "description": { "type": "STRING" }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+                
+                const payload = {
+                    contents: [{
+                        role: "user",
+                        parts: [{ text: prompt }]
+                    }],
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        responseSchema: responseSchema
+                    }
+                };
+
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                let response;
+                let retries = 0;
+                const maxRetries = 3;
+                while (retries < maxRetries) {
+                    try {
+                        response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        if (response.status !== 429) {
+                            break;
+                        }
+                    } catch (e) {
+                        // Pass
+                    }
+                    retries++;
+                    await new Promise(res => setTimeout(res, Math.pow(2, retries) * 1000));
+                }
+
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status} ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                const jsonContent = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                
+                if (!jsonContent) {
+                    throw new Error("Invalid response from API");
+                }
+
+                const itineraryData = JSON.parse(jsonContent);
+
+                // Populate the itinerary
+                itineraryData.days.forEach(dayData => {
+                    const dayCard = document.createElement('div');
+                    dayCard.classList.add('bg-white', 'rounded-2xl', 'p-6', 'sm:p-8', 'shadow-lg');
+                    
+                    dayCard.innerHTML = `
+                        <h3 class="text-2xl font-bold text-blue-800 mb-4">${dayData.title}</h3>
+                        <ul class="space-y-4"></ul>
+                    `;
+                    const activityList = dayCard.querySelector('ul');
+                    
+                    dayData.activities.forEach(activity => {
+                        const activityItem = document.createElement('li');
+                        activityItem.classList.add('flex', 'flex-col', 'sm:flex-row', 'items-start', 'sm:items-center', 'space-x-0', 'sm:space-x-4', 'space-y-2', 'sm:space-y-0');
+                        activityItem.innerHTML = `
+                            <div class="flex-grow">
+                                <h4 class="font-semibold text-lg text-blue-700">${activity.name}</h4>
+                                <p class="text-gray-600">${activity.description}</p>
+                            </div>
+                        `;
+                        activityList.appendChild(activityItem);
+                    });
+                    
+                    itineraryList.appendChild(dayCard);
+                });
+
+            } catch (error) {
+                console.error("Failed to generate itinerary:", error);
+                errorMessage.classList.remove('hidden');
+            } finally {
+                // Hide loading state
+                loadingItinerary.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
