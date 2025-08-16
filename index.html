@@ -3,308 +3,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ไปซัปโปโรกันไหมคะ?</title>
-    <!-- Use Tailwind CSS for a modern, responsive design -->
+    <title>ซัปโปโร: เสียงกระซิบของหิมะ</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* A light blue-gray background */
         }
-        .animate-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        .bg-hero {
+            background-image: url('http://googleusercontent.com/image_collection/image_retrieval/5483842155372034048_0');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .5; }
-        }
-
-        /* --- CSS for Snow Effect --- */
-        /* Create a layer of snow using a pseudo-element on the body */
-        body::before, body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none; /* Allows clicks to pass through */
-            z-index: -1; /* Keep snow behind content */
-        }
-        
-        /* The first layer of snow, a bit smaller and denser */
-        body::before {
-            background-image: radial-gradient(white 10%, transparent 10%);
-            background-size: 8px 8px; /* Control size of snowflakes */
-            animation: snowfall-1 20s linear infinite;
-        }
-
-        /* The second layer of snow, larger and more sparse */
-        body::after {
-            background-image: radial-gradient(white 15%, transparent 15%);
-            background-size: 10px 10px;
-            animation: snowfall-2 25s linear infinite;
-            filter: blur(1px); /* Add a slight blur to create depth */
-        }
-
-        /* Animation for the first layer (faster) */
-        @keyframes snowfall-1 {
-            from {
-                transform: translateY(-100%) rotate(0deg);
-            }
-            to {
-                transform: translateY(100%) rotate(360deg);
-            }
-        }
-
-        /* Animation for the second layer (slower) */
-        @keyframes snowfall-2 {
-            from {
-                transform: translateY(-100%) rotate(0deg);
-            }
-            to {
-                transform: translateY(100%) rotate(360deg);
-            }
-        }
-        /* --- End of CSS for Snow Effect --- */
     </style>
 </head>
-<body class="antialiased text-gray-800">
+<body class="bg-slate-50 text-gray-800 antialiased">
 
-    <!-- Main Container -->
-    <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8">
-
-        <!-- Header Section -->
-        <header class="w-full max-w-4xl text-center mb-12">
-            <h1 class="text-4xl sm:text-6xl font-extrabold text-blue-900 mb-2 leading-tight">
-                ไปซัปโปโรกันไหมคะ?
+    <!-- Hero Section -->
+    <header class="bg-hero bg-slate-900/40 text-white py-24 text-center rounded-b-3xl shadow-xl">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-md">
+                ซัปโปโร: เสียงกระซิบของหิมะ
             </h1>
-            <p class="text-xl sm:text-2xl text-blue-700 font-semibold mb-6">
-                ทริปในฝันที่ฮอกไกโดช่วงเดือนมีนาคม 2026!
+            <p class="text-xl md:text-2xl font-light drop-shadow-sm">
+                ความสงบงดงามแห่งฤดูหนาวที่กำลังจะผลิบาน
             </p>
-            <!-- Hero Image -->
-            <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl mb-4">
-                <img src="https://images.unsplash.com/photo-1549429402-39f8f20b41c0?q=80&w=1974&auto=format&fit=crop" alt="ภาพวิวภูเขาและหิมะที่สวยงาม" class="w-full h-auto object-cover">
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Trip Details Section -->
+        <section id="trip-details" class="bg-white p-8 rounded-2xl shadow-lg mb-12">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2">
+                เมื่อหิมะเล่าเรื่องความงดงามของซัปโปโร
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-lg mb-4 leading-relaxed">
+                        ลองจินตนาการถึงการพักผ่อนในบรรยากาศที่เงียบสงบ ที่ซึ่งหิมะยังคงปกคลุมผืนดินอย่างนุ่มนวล ซัปโปโรในเดือนมีนาคมคือช่วงเวลาแห่งการเปลี่ยนผ่าน ที่ทำให้เราได้สัมผัสความงดงามของทั้งสองฤดูไปพร้อม ๆ กัน
+                    </p>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span class="font-semibold text-gray-700">วันเดินทาง:</span> 11-15 มีนาคม 2026 (5 วัน 4 คืน)
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span class="font-semibold text-gray-700">สถานที่:</span> ซัปโปโร ประเทศญี่ปุ่น
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/5483842155372034048_3" alt="A beautiful snowy street in Sapporo" class="rounded-xl shadow-md">
+                </div>
             </div>
-        </header>
+        </section>
 
         <!-- Why Sapporo Section -->
-        <section class="w-full max-w-4xl bg-white rounded-3xl p-6 sm:p-10 shadow-xl mb-12">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-6">
-                ทำไมต้องเป็นซัปโปโรในเดือนมีนาคม?
+        <section id="why-sapporo" class="p-8 rounded-2xl shadow-lg mb-12 bg-blue-100">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2 text-center">
+                เหตุผลที่ทำให้ใจคุณต้องละลาย
             </h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Card 1: Good Weather -->
-                <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
-                    <h3 class="font-bold text-xl text-blue-800 mb-2">อากาศกำลังดี ไม่หนาวจนเกินไป</h3>
-                    <p class="text-gray-600">อุณหภูมิเริ่มอุ่นขึ้น แต่ก็ยังคงความเย็นสบาย เหมาะกับการเดินเล่นและเที่ยวชมเมือง</p>
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: Beautiful Scenery -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/5483842155372034048_1" alt="A beautiful snowy landscape" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">โลกแห่งความสงบ</h3>
+                    <p class="text-gray-600">
+                        เมืองและภูเขาจะถูกปกคลุมด้วยหิมะนุ่มนวล สร้างทัศนียภาพที่เงียบสงบและงดงาม เหมาะสำหรับการพักผ่อนอย่างแท้จริง
+                    </p>
                 </div>
-                <!-- Card 2: Still Snow -->
-                <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
-                    <h3 class="font-bold text-xl text-blue-800 mb-2">ยังคงมีหิมะให้เห็น</h3>
-                    <p class="text-gray-600">เป็นช่วงปลายฤดูหนาว ที่ยังสามารถชมทิวทัศน์ที่ปกคลุมด้วยหิมะได้อย่างเต็มที่</p>
+                <!-- Card 2: Relaxing Activities -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <img src="https://placehold.co/600x400/96b8e3/0f172a?text=Relaxing+Onsen" alt="A person relaxing in a hot spring" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">ปลดปล่อยความเหนื่อยล้า</h3>
+                    <p class="text-gray-600">
+                        คุณสามารถผ่อนคลายในออนเซ็นที่แสนสบาย หรือเดินเล่นในหมู่บ้านประวัติศาสตร์อันเงียบสงบ ที่จะทำให้คุณรู้สึกผ่อนคลายอย่างแท้จริง
+                    </p>
                 </div>
-                <!-- Card 3: Spring Beginning -->
-                <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
-                    <h3 class="font-bold text-xl text-blue-800 mb-2">ช่วงเริ่มต้นของฤดูใบไม้ผลิ</h3>
-                    <p class="text-gray-600">ทริปเดียวได้เห็นทั้งหิมะที่สวยงามและดอกไม้ที่เริ่มผลิบานไปพร้อมๆ กัน!</p>
-                </div>
-                <!-- Card 4: Less Crowded -->
-                <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
-                    <h3 class="font-bold text-xl text-blue-800 mb-2">ไม่ต้องแย่งกับใคร</h3>
-                    <p class="text-gray-600">นักท่องเที่ยวไม่แออัด ทำให้เที่ยวได้สบายและเป็นส่วนตัวมากขึ้น</p>
+                <!-- Card 3: Delicious Food -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/5483842155372034048_2" alt="A bowl of hot ramen" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">อิ่มอร่อยกับความสุข</h3>
+                    <p class="text-gray-600">
+                        ฮอกไกโดขึ้นชื่อเรื่องอาหารสดใหม่! ลิ้มรสราเม็งมิโซะร้อนๆ อาหารทะเลสดๆ จากตลาด และขนมหวานที่นุ่มละมุนลิ้น
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Food Section -->
-        <section class="w-full max-w-4xl bg-white rounded-3xl p-6 sm:p-10 shadow-xl mb-12">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-6">
-                อาหารที่พลาดไม่ได้!
-            </h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Food 1: Ramen -->
-                <div class="flex flex-col items-center text-center">
-                    <img src="https://images.unsplash.com/photo-1565551910292-6f2964e52f1e?q=80&w=1974&auto=format&fit=crop" alt="ภาพราเม็งซัปโปโร" class="w-full h-auto rounded-xl object-cover mb-3">
-                    <p class="font-semibold text-lg text-gray-700">ราเม็งซัปโปโร</p>
+        <!-- Budget & Weather Section -->
+        <section class="grid md:grid-cols-2 gap-12 mb-12">
+            <!-- Budget Section -->
+            <div id="budget" class="bg-white p-8 rounded-2xl shadow-lg">
+                <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2">
+                    งบประมาณโดยประมาณ (บาท)
+                </h2>
+                <p class="text-gray-600 mb-4">
+                    ข้อมูลค่าใช้จ่ายสำหรับตั๋วเครื่องบินและที่พัก เพื่อช่วยในการตัดสินใจ
+                </p>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-700 mb-2">สำหรับผู้ใหญ่ 1 ท่าน</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li><strong>ตั๋วเครื่องบิน:</strong> ~17,000 บาท</li>
+                            <li><strong>ที่พัก (4 คืน):</strong> ~8,000 บาท (2,000 บาท/คืน)</li>
+                            <li class="text-blue-600 font-bold"><strong>รวม (โดยประมาณ):</strong> ~25,000 บาท</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-700 mb-2">สำหรับผู้ใหญ่ 3 ท่าน</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li><strong>ตั๋วเครื่องบิน:</strong> ~51,000 บาท (17,000 บาท x 3)</li>
+                            <li><strong>ที่พัก (4 คืน):</strong> ~24,000 บาท (2,000 บาท/คืน x 3 ห้อง)</li>
+                            <li class="text-blue-600 font-bold"><strong>รวม (โดยประมาณ):</strong> ~75,000 บาท</li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Food 2: Sushi -->
-                <div class="flex flex-col items-center text-center">
-                    <img src="https://images.unsplash.com/photo-1579584285854-f06b99450849?q=80&w=1974&auto=format&fit=crop" alt="ภาพซูชิและอาหารทะเล" class="w-full h-auto rounded-xl object-cover mb-3">
-                    <p class="font-semibold text-lg text-gray-700">ซูชิและอาหารทะเลสดใหม่</p>
-                </div>
-                <!-- Food 3: Ice Cream -->
-                <div class="flex flex-col items-center text-center">
-                    <img src="https://images.unsplash.com/photo-1563870831613-2553b6f9a0d1?q=80&w=1974&auto=format&fit=crop" alt="ภาพไอศกรีมนมฮอกไกโด" class="w-full h-auto rounded-xl object-cover mb-3">
-                    <p class="font-semibold text-lg text-gray-700">ไอศกรีมนมฮอกไกโด</p>
-                </div>
-                <!-- Food 4: Crab -->
-                <div class="flex flex-col items-center text-center">
-                    <img src="https://images.unsplash.com/photo-1621379373907-775b5b00c3b9?q=80&w=1974&auto=format&fit=crop" alt="ภาพปูยักษ์ฮอกไกโด" class="w-full h-auto rounded-xl object-cover mb-3">
-                    <p class="font-semibold text-lg text-gray-700">ปูยักษ์ฮอกไกโด</p>
+            </div>
+
+            <!-- Weather Forecast Section -->
+            <div id="weather" class="bg-blue-100 p-8 rounded-2xl shadow-lg">
+                <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">
+                    พยากรณ์อากาศที่เงียบสงบ
+                </h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    เดือนมีนาคมคือช่วงเวลาที่อากาศเริ่มอุ่นขึ้นเล็กน้อย แต่หิมะก็ยังคงอยู่
+                </p>
+                <div class="flex flex-col items-center justify-center space-y-4">
+                    <div class="text-5xl text-blue-500">
+                        ❄️
+                    </div>
+                    <p class="text-4xl font-bold text-blue-700">
+                        -2°C to 5°C
+                    </p>
+                    <p class="text-lg text-gray-600 text-center">
+                        คาดว่าจะมีหิมะตกและมีเมฆมากในบางวัน เหมาะกับการสวมเสื้อผ้าอุ่นๆ เพื่อสัมผัสบรรยากาศได้อย่างเต็มที่ค่ะ
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Final Call to Action -->
-        <section class="w-full max-w-4xl text-center bg-blue-100 rounded-3xl p-8 shadow-xl">
-            <h2 class="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
-                สร้างแผนการเดินทาง & รูปภาพเลย!
+        <!-- Itinerary Section -->
+        <section id="itinerary" class="bg-white p-8 rounded-2xl shadow-lg mb-12">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2 text-center">
+                ตารางการเดินทางที่แสนผ่อนคลาย (11-15 มี.ค. 2026)
             </h2>
-            <p class="text-lg sm:text-xl text-blue-800 mb-6">
-                ให้ AI สร้างแผนการเดินทางและภาพประกอบที่น่าประทับใจสำหรับคุณ
+            <div class="space-y-8">
+                <!-- Day 1 -->
+                <div class="flex flex-col md:flex-row items-start md:items-center bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-blue-500 text-white rounded-full font-bold text-lg mb-4 md:mb-0 md:mr-6">1</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-700 mb-2">วันแรก: เริ่มต้นการเดินทาง</h3>
+                        <p class="text-gray-600">เดินทางถึงซัปโปโร และพักผ่อนในโรงแรมที่แสนสบาย จากนั้นลิ้มรสซุปแกงกะหรี่ร้อน ๆ เพื่อต้อนรับการมาเยือน</p>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="flex flex-col md:flex-row items-start md:items-center bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-blue-500 text-white rounded-full font-bold text-lg mb-4 md:mb-0 md:mr-6">2</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-700 mb-2">วันที่สอง: ความสุขในเมือง</h3>
+                        <p class="text-gray-600">เดินเล่นอย่างสงบที่หอนาฬิกาและสวนโอโดริ จากนั้นขึ้นชมวิวเมืองจากทีวีทาวเวอร์ ก่อนปิดท้ายด้วยราเม็งมิโซะแสนอร่อย</p>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="flex flex-col md:flex-row items-start md:items-center bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-blue-500 text-white rounded-full font-bold text-lg mb-4 md:mb-0 md:mr-6">3</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-700 mb-2">วันที่สาม: เสน่ห์แห่งโอตารุ</h3>
+                        <p class="text-gray-600">นั่งรถไฟสู่โอตารุ เดินเล่นริมคลองอย่างสบายๆ และเยี่ยมชมพิพิธภัณฑ์กล่องดนตรี ก่อนจะอิ่มอร่อยกับอาหารทะเลสด ๆ</p>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="flex flex-col md:flex-row items-start md:items-center bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-blue-500 text-white rounded-full font-bold text-lg mb-4 md:mb-0 md:mr-6">4</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-700 mb-2">วันที่สี่: วันแห่งความละมุน</h3>
+                        <p class="text-gray-600">เริ่มต้นเช้าวันใหม่ด้วยอาหารทะเลสดจากตลาดนิจิโจ และใช้เวลาช่วงบ่ายอย่างมีความสุขที่ชิโรอิ โคอิบิโตะ พาร์ค ก่อนกลับมาพักผ่อนและเตรียมตัวกลับในวันถัดไป</p>
+                    </div>
+                </div>
+                
+                <!-- Day 5 -->
+                <div class="flex flex-col md:flex-row items-start md:items-center bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-blue-500 text-white rounded-full font-bold text-lg mb-4 md:mb-0 md:mr-6">5</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-700 mb-2">วันที่ห้า: เดินทางกลับบ้าน</h3>
+                        <p class="text-gray-600">เตรียมตัวเดินทางกลับ พร้อมเก็บความทรงจำที่อบอุ่นจากซัปโปโรไว้ในใจ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz Section -->
+        <section id="quiz" class="bg-white p-8 rounded-2xl shadow-lg mb-12">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2 text-center">
+                ค้นหาช่วงเวลาที่ใช่ในซัปโปโร
+            </h2>
+            <p class="text-center text-gray-600 mb-6 leading-relaxed">
+                มาตอบคำถามง่ายๆ เพื่อดูว่าคุณจะหลงรักช่วงเวลาไหนในซัปโปโรมากที่สุด
             </p>
-            <div class="flex justify-center mb-6">
-                <button id="generateItineraryBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
-                    สร้างแผนการเดินทาง ✨
-                </button>
-            </div>
-            
-            <div id="itineraryContent" class="hidden">
-                <div id="loading-itinerary" class="text-center text-gray-500 hidden mb-6">
-                    <span class="animate-pulse">กำลังสร้างแผนการเดินทาง... โปรดรอสักครู่</span>
+            <form id="sapporo-quiz" class="space-y-8">
+                <!-- Question 1 -->
+                <div class="quiz-question bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <p class="text-lg font-semibold text-gray-700 mb-4">1. คุณชอบผ่อนคลายด้วยวิธีไหนมากที่สุด?</p>
+                    <div class="flex flex-col space-y-2">
+                        <label class="inline-flex items-center text-gray-600">
+                            <input type="radio" name="q1" value="A" class="form-radio text-blue-600">
+                            <span class="ml-2">แช่ตัวในบ่อน้ำพุร้อน.</span>
+                        </label>
+                        <label class="inline-flex items-center text-gray-600">
+                            <input type="radio" name="q1" value="B" class="form-radio text-blue-600">
+                            <span class="ml-2">เดินสำรวจสวนสาธารณะที่เงียบสงบ.</span>
+                        </label>
+                        <label class="inline-flex items-center text-gray-600">
+                            <input type="radio" name="q1" value="C" class="form-radio text-blue-600">
+                            <span class="ml-2">ลิ้มลองอาหารท้องถิ่นที่อร่อย.</span>
+                        </label>
+                    </div>
                 </div>
-                <div id="error-message" class="text-center text-red-500 font-bold hidden mb-6">
-                    เกิดข้อผิดพลาดในการสร้างแผนการเดินทาง โปรดลองอีกครั้ง
+
+                <!-- Question 2 -->
+                <div class="quiz-question bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <p class="text-lg font-semibold text-gray-700 mb-4">2. คุณอยากได้ของที่ระลึกแบบไหนกลับบ้าน?</p>
+                    <div class="flex flex-col space-y-2">
+                        <label class="inline-flex items-center text-gray-600">
+                            <input type="radio" name="q2" value="A" class="form-radio text-blue-600">
+                            <span class="ml-2">งานศิลปะท้องถิ่นที่สวยงาม.</span>
+                        </label>
+                        <label class="inline-flex items-center text-gray-600">
+                            <input type="radio" name="q2" value="B" class="form-radio text-blue-600">
+                            <span class="ml-2">ของหวานอร่อยๆ ไว้แบ่งกันทาน.</span>
+                        </label>
+                        <label class="inline-flex items-center text-gray-600">
+                            <input type="radio" name="q2" value="C" class="form-radio text-blue-600">
+                            <span class="ml-2">ของที่ระลึกจากสถานที่ประวัติศาสตร์.</span>
+                        </label>
+                    </div>
                 </div>
-                <div id="itinerary-list" class="space-y-8">
-                    <!-- Itinerary will be dynamically added here -->
+
+                <!-- Question 3 -->
+                <div class="quiz-question bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <p class="text-lg font-semibold text-gray-700 mb-4">3. อะไรที่ฟังดูน่าตื่นเต้นที่สุดสำหรับคุณ?</p>
+                    <div class="flex flex-col space-y-2">
+                        <label class="inline-flex items-center text-gray-600">
+                            <input type="radio" name="q3" value="A" class="form-radio text-blue-600">
+                            <span class="ml-2">ชมวิวสวยๆ จากยอดเขา.</span>
+                        </label>
+                        <label class="inline-flex items-center text-gray-600">
+                            <input type="radio" name="q3" value="B" class="form-radio text-blue-600">
+                            <span class="ml-2">เดินเล่นในตลาดที่คึกคัก.</span>
+                        </label>
+                        <label class="inline-flex items-center text-gray-600">
+                            <input type="radio" name="q3" value="C" class="form-radio text-blue-600">
+                            <span class="ml-2">เยี่ยมชมสวนที่เงียบสงบ.</span>
+                        </label>
+                    </div>
                 </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+                        มาดูกันว่าคุณจะหลงรักอะไร!
+                    </button>
+                </div>
+            </form>
+            <div id="quiz-result" class="mt-8 text-center text-xl font-semibold text-gray-800 hidden">
+                <!-- Quiz result will be displayed here -->
             </div>
         </section>
 
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 rounded-t-3xl shadow-xl">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg mb-4">
+                หวังว่าข้อมูลนี้จะช่วยให้คุณได้สัมผัสถึงความงดงามของซัปโปโรนะคะ
+            </p>
+            <p class="text-sm text-gray-400">
+                สร้างขึ้นด้วยความรัก
+            </p>
+        </div>
+    </footer>
 
     <script>
-        const generateItineraryBtn = document.getElementById('generateItineraryBtn');
-        const itineraryContent = document.getElementById('itineraryContent');
-        const loadingItinerary = document.getElementById('loading-itinerary');
-        const errorMessage = document.getElementById('error-message');
-        const itineraryList = document.getElementById('itinerary-list');
+        // Get form and result elements
+        const quizForm = document.getElementById('sapporo-quiz');
+        const quizResult = document.getElementById('quiz-result');
 
-        generateItineraryBtn.addEventListener('click', async () => {
-            // Show loading state for the itinerary
-            itineraryContent.classList.remove('hidden');
-            loadingItinerary.classList.remove('hidden');
-            errorMessage.classList.add('hidden');
-            itineraryList.innerHTML = '';
+        // Add event listener for form submission
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
 
-            try {
-                const prompt = "สร้างแผนการเดินทาง 3 วันที่น่าสนใจสำหรับท่องเที่ยวในเมืองซัปโปโรในช่วงเดือนมีนาคม สำหรับผู้สูงอายุ ให้แต่ละวันมีรายละเอียดกิจกรรม 3-4 อย่าง พร้อมชื่อกิจกรรมและคำอธิบายสั้นๆ (ไม่เกิน 2-3 ประโยค) แผนการเดินทางนี้เน้นการเดินทางสบายๆ ไม่เร่งรีบ";
-                
-                // Define the structured JSON response schema
-                const responseSchema = {
-                    type: "OBJECT",
-                    properties: {
-                        "tripTitle": { "type": "STRING" },
-                        "days": {
-                            "type": "ARRAY",
-                            "items": {
-                                "type": "OBJECT",
-                                "properties": {
-                                    "day": { "type": "STRING" },
-                                    "title": { "type": "STRING" },
-                                    "activities": {
-                                        "type": "ARRAY",
-                                        "items": {
-                                            "type": "OBJECT",
-                                            "properties": {
-                                                "name": { "type": "STRING" },
-                                                "description": { "type": "STRING" }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                };
-                
-                const payload = {
-                    contents: [{
-                        role: "user",
-                        parts: [{ text: prompt }]
-                    }],
-                    generationConfig: {
-                        responseMimeType: "application/json",
-                        responseSchema: responseSchema
-                    }
-                };
+            // Get all radio button inputs
+            const q1Answer = document.querySelector('input[name="q1"]:checked');
+            const q2Answer = document.querySelector('input[name="q2"]:checked');
+            const q3Answer = document.querySelector('input[name="q3"]:checked');
 
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-                let response;
-                let retries = 0;
-                const maxRetries = 3;
-                while (retries < maxRetries) {
-                    try {
-                        response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-                        if (response.status !== 429) {
-                            break;
-                        }
-                    } catch (e) {
-                        // Pass
-                    }
-                    retries++;
-                    await new Promise(res => setTimeout(res, Math.pow(2, retries) * 1000));
-                }
-
-                if (!response.ok) {
-                    throw new Error(`API error: ${response.status} ${response.statusText}`);
-                }
-
-                const result = await response.json();
-                const jsonContent = result.candidates?.[0]?.content?.parts?.[0]?.text;
-                
-                if (!jsonContent) {
-                    throw new Error("Invalid response from API");
-                }
-
-                const itineraryData = JSON.parse(jsonContent);
-
-                // Populate the itinerary
-                itineraryData.days.forEach(dayData => {
-                    const dayCard = document.createElement('div');
-                    dayCard.classList.add('bg-white', 'rounded-2xl', 'p-6', 'sm:p-8', 'shadow-lg');
-                    
-                    dayCard.innerHTML = `
-                        <h3 class="text-2xl font-bold text-blue-800 mb-4">${dayData.title}</h3>
-                        <ul class="space-y-4"></ul>
-                    `;
-                    const activityList = dayCard.querySelector('ul');
-                    
-                    dayData.activities.forEach(activity => {
-                        const activityItem = document.createElement('li');
-                        activityItem.classList.add('flex', 'flex-col', 'sm:flex-row', 'items-start', 'sm:items-center', 'space-x-0', 'sm:space-x-4', 'space-y-2', 'sm:space-y-0');
-                        activityItem.innerHTML = `
-                            <div class="flex-grow">
-                                <h4 class="font-semibold text-lg text-blue-700">${activity.name}</h4>
-                                <p class="text-gray-600">${activity.description}</p>
-                            </div>
-                        `;
-                        activityList.appendChild(activityItem);
-                    });
-                    
-                    itineraryList.appendChild(dayCard);
-                });
-
-            } catch (error) {
-                console.error("Failed to generate itinerary:", error);
-                errorMessage.classList.remove('hidden');
-            } finally {
-                // Hide loading state
-                loadingItinerary.classList.add('hidden');
+            // Check if all questions are answered
+            if (!q1Answer || !q2Answer || !q3Answer) {
+                quizResult.classList.remove('hidden');
+                quizResult.textContent = 'กรุณาตอบคำถามทั้งหมดก่อนนะคะ!';
+                quizResult.classList.add('text-red-600');
+                return;
             }
+
+            // Count the score for each letter
+            let score = { A: 0, B: 0, C: 0 };
+            score[q1Answer.value]++;
+            score[q2Answer.value]++;
+            score[q3Answer.value]++;
+
+            // Determine the result based on the highest score
+            let resultMessage = '';
+            if (score.A > score.B && score.A > score.C) {
+                resultMessage = "จากคำตอบของคุณ ดูเหมือนว่าคุณกำลังมองหาทริปที่ผ่อนคลายและมีทิวทัศน์สวยงาม! คุณจะหลงรักการแช่ออนเซ็นแบบดั้งเดิมและการชมวิวทิวทัศน์ที่สวยงามจากภูเขาโมอิวะอย่างแน่นอนค่ะ";
+            } else if (score.B > score.A && score.B > score.C) {
+                resultMessage = "ทริปในฝันของคุณเต็มไปด้วยธรรมชาติที่สวยงามและเรื่องราวที่น่าสนใจ! เราคิดว่าคุณจะเพลิดเพลินกับการเดินเล่นสบายๆ ในสวนสาธารณะ และเยี่ยมชมหมู่บ้านประวัติศาสตร์ฮอกไกโดที่สวยงามค่ะ";
+            } else if (score.C > score.A && score.C > score.B) {
+                resultMessage = "คุณเป็นนักชิมตัวยง! เรามั่นใจว่าคุณจะต้องหลงรักการได้ลองชิมอาหารอร่อยๆ ของซัปโปโร โดยเฉพาะราเม็งชื่อดังและอาหารทะเลสดๆ จากตลาดค่ะ";
+            } else {
+                resultMessage = "ดูเหมือนว่าคุณจะชอบทุกอย่างเลย! ซัปโปโรมีทุกสิ่งให้คุณได้เพลิดเพลินค่ะ เรามาเริ่มวางแผนกันเถอะ!";
+            }
+
+            // Display the result
+            quizResult.textContent = resultMessage;
+            quizResult.classList.remove('hidden', 'text-red-600');
+            quizResult.classList.add('text-gray-800');
         });
     </script>
-
 </body>
 </html>
