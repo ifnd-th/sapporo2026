@@ -110,7 +110,7 @@
             <!-- Budget Section -->
             <div id="budget" class="bg-white p-8 rounded-2xl shadow-lg">
                 <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2">
-                    งบประมาณโดยประมาณ
+                    งบประมาณโดยประมาณ (บาท)
                 </h2>
                 <p class="text-gray-600 mb-4">
                     ข้อมูลค่าใช้จ่ายสำหรับตั๋วเครื่องบินและที่พัก เพื่อช่วยในการตัดสินใจ
@@ -230,6 +230,17 @@
             </div>
         </section>
 
+        <!-- New Section for Snowing in Hokkaido -->
+        <section id="snowing-hokkaido" class="bg-white p-8 rounded-2xl shadow-lg mb-12 text-center">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2">
+                สัมผัสความมหัศจรรย์ของหิมะฮอกไกโด
+            </h2>
+            <div class="text-6xl mb-6">❄️</div>
+            <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                ฮอกไกโดในช่วงฤดูหนาวและต้นฤดูใบไม้ผลิไม่ได้มีเพียงแค่ความหนาวเย็น แต่ยังมีความสวยงามอันเงียบสงบที่หาไม่ได้จากที่อื่น. ลองจินตนาการถึงการเดินท่ามกลางเกล็ดหิมะที่โปรยปรายลงมาอย่างนุ่มนวล, ทิวทัศน์ที่ปกคลุมด้วยหิมะสีขาวบริสุทธิ์, และบรรยากาศที่แสนสงบ... นี่คือช่วงเวลาที่คุณจะได้สัมผัสความมหัศจรรย์ของธรรมชาติอย่างแท้จริง
+            </p>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -252,45 +263,47 @@
             const quizResult = document.getElementById('quiz-result');
 
             // Add event listener for form submission
-            quizForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
+            if (quizForm) {
+                quizForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent default form submission
 
-                // Get all radio button inputs
-                const q1Answer = document.querySelector('input[name="q1"]:checked');
-                const q2Answer = document.querySelector('input[name="q2"]:checked');
-                const q3Answer = document.querySelector('input[name="q3"]:checked');
+                    // Get all radio button inputs
+                    const q1Answer = document.querySelector('input[name="q1"]:checked');
+                    const q2Answer = document.querySelector('input[name="q2"]:checked');
+                    const q3Answer = document.querySelector('input[name="q3"]:checked');
 
-                // Check if all questions are answered
-                if (!q1Answer || !q2Answer || !q3Answer) {
-                    quizResult.classList.remove('hidden');
-                    quizResult.textContent = 'กรุณาตอบคำถามทั้งหมดก่อนนะคะ!';
-                    quizResult.classList.add('text-red-600');
-                    return;
-                }
+                    // Check if all questions are answered
+                    if (!q1Answer || !q2Answer || !q3Answer) {
+                        quizResult.classList.remove('hidden');
+                        quizResult.textContent = 'กรุณาตอบคำถามทั้งหมดก่อนนะคะ!';
+                        quizResult.classList.add('text-red-600');
+                        return;
+                    }
 
-                // Count the score for each letter
-                let score = { A: 0, B: 0, C: 0 };
-                score[q1Answer.value]++;
-                score[q2Answer.value]++;
-                score[q3Answer.value]++;
+                    // Count the score for each letter
+                    let score = { A: 0, B: 0, C: 0 };
+                    score[q1Answer.value]++;
+                    score[q2Answer.value]++;
+                    score[q3Answer.value]++;
 
-                // Determine the result based on the highest score
-                let resultMessage = '';
-                if (score.A > score.B && score.A > score.C) {
-                    resultMessage = "จากคำตอบของคุณ ดูเหมือนว่าคุณกำลังมองหาทริปที่ผ่อนคลายและมีทิวทัศน์สวยงาม! คุณจะหลงรักการแช่ออนเซ็นแบบดั้งเดิมและการชมวิวทิวทัศน์ที่สวยงามจากภูเขาโมอิวะอย่างแน่นอนค่ะ";
-                } else if (score.B > score.A && score.B > score.C) {
-                    resultMessage = "ทริปในฝันของคุณเต็มไปด้วยธรรมชาติที่สวยงามและเรื่องราวที่น่าสนใจ! เราคิดว่าคุณจะเพลิดเพลินกับการเดินเล่นสบายๆ ในสวนสาธารณะ และเยี่ยมชมหมู่บ้านประวัติศาสตร์ฮอกไกโดที่สวยงามค่ะ";
-                } else if (score.C > score.A && score.C > score.B) {
-                    resultMessage = "คุณเป็นนักชิมตัวยง! เรามั่นใจว่าคุณจะต้องหลงรักการได้ลองชิมอาหารอร่อยๆ ของซัปโปโร โดยเฉพาะราเม็งชื่อดังและอาหารทะเลสดๆ จากตลาดค่ะ";
-                } else {
-                    resultMessage = "ดูเหมือนว่าคุณจะชอบทุกอย่างเลย! ซัปโปโรมีทุกสิ่งให้คุณได้เพลิดเพลินค่ะ เรามาเริ่มวางแผนกันเถอะ!";
-                }
+                    // Determine the result based on the highest score
+                    let resultMessage = '';
+                    if (score.A > score.B && score.A > score.C) {
+                        resultMessage = "จากคำตอบของคุณ ดูเหมือนว่าคุณกำลังมองหาทริปที่ผ่อนคลายและมีทิวทัศน์สวยงาม! คุณจะหลงรักการแช่ออนเซ็นแบบดั้งเดิมและการชมวิวทิวทัศน์ที่สวยงามจากภูเขาโมอิวะอย่างแน่นอนค่ะ";
+                    } else if (score.B > score.A && score.B > score.C) {
+                        resultMessage = "ทริปในฝันของคุณเต็มไปด้วยธรรมชาติที่สวยงามและเรื่องราวที่น่าสนใจ! เราคิดว่าคุณจะเพลิดเพลินกับการเดินเล่นสบายๆ ในสวนสาธารณะ และเยี่ยมชมหมู่บ้านประวัติศาสตร์ฮอกไกโดที่สวยงามค่ะ";
+                    } else if (score.C > score.A && score.C > score.B) {
+                        resultMessage = "คุณเป็นนักชิมตัวยง! เรามั่นใจว่าคุณจะต้องหลงรักการได้ลองชิมอาหารอร่อยๆ ของซัปโปโร โดยเฉพาะราเม็งชื่อดังและอาหารทะเลสดๆ จากตลาดค่ะ";
+                    } else {
+                        resultMessage = "ดูเหมือนว่าคุณจะชอบทุกอย่างเลย! ซัปโปโรมีทุกสิ่งให้คุณได้เพลิดเพลินค่ะ เรามาเริ่มวางแผนกันเถอะ!";
+                    }
 
-                // Display the result
-                quizResult.textContent = resultMessage;
-                quizResult.classList.remove('hidden', 'text-red-600');
-                quizResult.classList.add('text-gray-800');
-            });
+                    // Display the result
+                    quizResult.textContent = resultMessage;
+                    quizResult.classList.remove('hidden', 'text-red-600');
+                    quizResult.classList.add('text-gray-800');
+                });
+            }
             
             // Rating scale functionality
             const ratingEmojis = document.querySelectorAll('.rating-emoji');
